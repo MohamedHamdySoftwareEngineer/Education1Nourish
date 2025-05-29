@@ -2,12 +2,13 @@ import 'package:edunourish/features/Parent/features/Settings%20Screen/presentati
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+  final int initialIndex;
+  const SettingsScreen({super.key,required this.initialIndex});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SettingsScreenBody(),
+    return  Scaffold(
+      body: SettingsScreenBody(initialIndex:initialIndex),
     );
   }
 }

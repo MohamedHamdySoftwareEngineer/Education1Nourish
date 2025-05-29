@@ -1,6 +1,6 @@
 const myLogo = 'assets/Parent/logo2.png';
 
-const gradeImage = 'assets/Parent/parent/grade.png';
+
 const theTeacherHome = 'assets/Parent/parent/teacher.png';
 
 const theStudentHome = 'assets/Parent/parent/studIcon.png';
@@ -24,7 +24,12 @@ const mapImage =
     'assets/Parent/bus_screen/🌎 Map Maker_ Alexandria, Alexandria, Egypt (Multi Brand Network).png';
 const parentImage = 'assets/Parent/parent/images/ParentImage.png';
 const teacherImage = 'assets/Parent/parent/images/teacher_image.png';
+const gradesImage = 'assets/Parent/parent/images/grades_Image.png';
 const attendenceIcon = 'assets/Parent/parent/icons/attendence_icon.svg';
 const calenderIcon = 'assets/Parent/parent/icons/Calendar.svg';
 const listIcon = 'assets/Parent/parent/icons/lists_icon.svg';
+const busIcon = 'assets/Parent/parent/icons/bus.svg';
+const homeIcon = 'assets/Parent/parent/icons/Home.svg';
+const gradeIcon = 'assets/Parent/parent/icons/grades.svg';
+const settingsIcon = 'assets/Parent/parent/icons/Settings.svg';
 const mealImage = 'assets/Parent/parent/images/meal.jpg';

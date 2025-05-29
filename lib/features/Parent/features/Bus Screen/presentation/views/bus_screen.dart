@@ -8,14 +8,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/bus_event.dart';
 
 class BusScreen extends StatelessWidget {
-  const BusScreen({super.key});
+  final int initialIndex;
+  const BusScreen({super.key, required this.initialIndex});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => BusBloc(apiService: ApiService())..add(FetchBuses()),
-      child: const Scaffold(
-        body: BusScreenBody(),
+      child:  Scaffold(
+        body: BusScreenBody(initialIndex: initialIndex,),
       ),
     );
   }

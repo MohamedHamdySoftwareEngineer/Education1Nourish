@@ -4,6 +4,7 @@ const mainText23 =
     TextStyle(fontSize: 23, fontWeight: FontWeight.bold, );
 
 
+
 const mainText18 =
     TextStyle(fontSize: 18, fontWeight: FontWeight.bold, );
 

@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget {
              
             InkWell(
                 onTap: () {
-                  AppRouter.toBack(context);
+                 AppRouter.toParentHome(context);
                 },
                 child: const Icon(
                   Icons.arrow_back_ios_sharp,

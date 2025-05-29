@@ -21,12 +21,6 @@ class TeacherScreenBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            const Padding(
-            padding: EdgeInsets.only(bottom: 10),
-            child: Text("Teachers", style: textBold28),
-          ),
-
-          
             Expanded(
               child: ListView.builder(
                 itemCount: teachers.length,

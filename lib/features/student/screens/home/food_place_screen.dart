@@ -5,7 +5,7 @@ import 'package:edunourish/features/student/providers/student_provider.dart';
 import 'package:edunourish/core/models/food_palce.dart';
 
 class FoodPlaceScreen extends StatefulWidget {
-  const FoodPlaceScreen({Key? key}) : super(key: key);
+  const FoodPlaceScreen({super.key});
 
   @override
   State<FoodPlaceScreen> createState() => _FoodPlaceScreenState();

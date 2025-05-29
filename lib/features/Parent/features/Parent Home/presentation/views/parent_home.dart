@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'widgets/parent_home_body.dart';
 
 class ParentHome extends StatelessWidget {
-  const ParentHome({super.key});
+  final int initialIndex;
+  const ParentHome({super.key,required this.initialIndex});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: ParentHomeBody(),
+    return  Scaffold(
+      body: ParentHomeBody(initialIndex: initialIndex),
     );
   }
 }

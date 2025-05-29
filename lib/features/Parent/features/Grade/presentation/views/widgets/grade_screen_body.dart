@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'subject_class.dart';
 
 class GradeScreenBody extends StatefulWidget {
-  const GradeScreenBody({super.key});
+  final int initialIndex;
+  const GradeScreenBody({super.key,required this.initialIndex});
 
   @override
   _GradeScreenBodyState createState() => _GradeScreenBodyState();
@@ -28,18 +29,48 @@ class _GradeScreenBodyState extends State<GradeScreenBody> {
   @override
   Widget build(BuildContext context) {
     final List<Subject> subjects = [
-      Subject(name: "Arabic", assignmentGrade: 88, quizGrade: 85, finalGrade: 82, ),
-      Subject(name: "Math",   assignmentGrade: 85, quizGrade: 78, finalGrade: 90, ),
-      Subject(name: "PE",     assignmentGrade: 72, quizGrade: 80, finalGrade: 75, ),
-      Subject(name: "Science",assignmentGrade: 78, quizGrade: 75, finalGrade: 80, ),
-      Subject(name: "ICT",    assignmentGrade: 95, quizGrade: 92, finalGrade: 88, ),
-      Subject(name: "English",assignmentGrade: 83, quizGrade: 66, finalGrade: 89, ),
+      Subject(
+        name: "Arabic",
+        assignmentGrade: 88,
+        quizGrade: 85,
+        finalGrade: 82,
+      ),
+      Subject(
+        name: "Math",
+        assignmentGrade: 85,
+        quizGrade: 78,
+        finalGrade: 90,
+      ),
+      Subject(
+        name: "PE",
+        assignmentGrade: 72,
+        quizGrade: 80,
+        finalGrade: 75,
+      ),
+      Subject(
+        name: "Science",
+        assignmentGrade: 78,
+        quizGrade: 75,
+        finalGrade: 80,
+      ),
+      Subject(
+        name: "ICT",
+        assignmentGrade: 95,
+        quizGrade: 92,
+        finalGrade: 88,
+      ),
+      Subject(
+        name: "English",
+        assignmentGrade: 83,
+        quizGrade: 66,
+        finalGrade: 89,
+      ),
     ];
 
     return BaseScaffold(
+      initialIndex: widget.initialIndex,
       appBartTitle: 'Grades',
       child: Column(
-        
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
@@ -47,10 +78,15 @@ class _GradeScreenBodyState extends State<GradeScreenBody> {
               itemCount: subjects.length,
               itemBuilder: (context, index) {
                 final subject = subjects[index];
-                final avgGrade = (subject.assignmentGrade + subject.quizGrade + subject.finalGrade) / 3;
+                final avgGrade = (subject.assignmentGrade +
+                        subject.quizGrade +
+                        subject.finalGrade) /
+                    3;
                 return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
@@ -101,7 +137,6 @@ class _GradeScreenBodyState extends State<GradeScreenBody> {
 
   Widget _buildSubjectColumn(String subjectName, double avgGrade) {
     final letterGrade = _getLetterGrade(avgGrade);
-    
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -116,7 +151,8 @@ class _GradeScreenBodyState extends State<GradeScreenBody> {
           child: Text(
             subjectName,
             textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
@@ -133,13 +169,15 @@ class _GradeScreenBodyState extends State<GradeScreenBody> {
           alignment: Alignment.center,
           child: Text(
             letterGrade,
-            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: ourMainColor),
+            style: const TextStyle(
+                fontSize: 22, fontWeight: FontWeight.bold, color: ourMainColor),
           ),
         ),
         const SizedBox(height: 8),
         Text(
           '${avgGrade.toStringAsFixed(1)}%',
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: ourMainColor),
+          style: const TextStyle(
+              fontSize: 16, fontWeight: FontWeight.w600, color: ourMainColor),
         ),
       ],
     );
@@ -152,6 +190,4 @@ class _GradeScreenBodyState extends State<GradeScreenBody> {
     if (grade >= 60) return 'D';
     return 'F';
   }
-
-  
 }

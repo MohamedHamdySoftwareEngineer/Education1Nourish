@@ -13,7 +13,7 @@ import 'subject_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 class HomeStudent extends StatefulWidget {
-  const HomeStudent({Key? key}) : super(key: key);
+  const HomeStudent({super.key});
 
   @override
   _HomeStudentState createState() => _HomeStudentState();
@@ -302,7 +302,7 @@ Widget _buildFeatureCard(String imagePath, String title, VoidCallback onTap) {
 class NewsPageStudent extends StatelessWidget {
   final News news;
 
-  const NewsPageStudent({Key? key, required this.news}) : super(key: key);
+  const NewsPageStudent({super.key, required this.news});
 
   @override
   Widget build(BuildContext context) {

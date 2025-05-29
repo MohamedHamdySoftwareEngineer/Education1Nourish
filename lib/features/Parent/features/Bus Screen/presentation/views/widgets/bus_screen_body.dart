@@ -13,7 +13,8 @@ import 'package:geolocator/geolocator.dart'; // استيراد مكتبة تحد
 
 // الواجهة الرئيسية لشاشة الباص مع إمكانية السحب للتحديث
 class BusScreenBody extends StatefulWidget {
-  const BusScreenBody({super.key});
+  final int initialIndex; // متغير لتحديد الفهرس الأولي (غير مستخدم هنا)
+  const BusScreenBody({super.key, required this.initialIndex}); // مُنشئ الواجهة مع تعيين الفهرس الأولي
 
   @override
   BusScreenBodyState createState() => BusScreenBodyState();
@@ -33,6 +34,7 @@ class BusScreenBodyState extends State<BusScreenBody> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
+      initialIndex: widget.initialIndex, // تعيين الفهرس الأولي
       appBartTitle: 'Bus Screen', // عنوان الشاشة
       child: RefreshIndicator(
         onRefresh: _handleRefresh, // ربط السحب مع الدالة
@@ -42,20 +44,11 @@ class BusScreenBodyState extends State<BusScreenBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Center(
-                  child: Text(
-                    'Student Location', // عنوان القسم
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
+              const SizedBox(height: 40,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0), // حواف أفقية
                 child: Container(
-                  height: 300, // ارتفاع ثابت للحاوية
+                  height: 500, // ارتفاع ثابت للحاوية
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: ourMainColor,

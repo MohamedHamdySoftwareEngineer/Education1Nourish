@@ -6,11 +6,13 @@ import 'build_icon_card.dart';
 import 'parent_slider.dart';
 
 class ParentHomeBody extends StatelessWidget {
-  const ParentHomeBody({super.key});
+  final int initialIndex;
+  const ParentHomeBody({super.key, required this.initialIndex});
 
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
+      initialIndex: initialIndex,
       appBartTitle: '',
       wantAppBar: false,
       child: Expanded(
